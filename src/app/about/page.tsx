@@ -4,7 +4,7 @@ import { Heart, Shield, GitFork, Terminal, Users } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Siyarix — the AI-native cybersecurity orchestration platform democratizing security operations.",
+    "Learn about Siyarix — a growing personal project turning into an open-source cybersecurity orchestration platform.",
 };
 
 const philosophy = [
@@ -28,9 +28,9 @@ const philosophy = [
   },
   {
     icon: GitFork,
-    title: "Open-Core",
+    title: "Open Source",
     description:
-      "The core platform is free and open-source. Premium features are designed for enterprise needs, funding the project while keeping the foundation accessible to everyone.",
+      "The project is entirely open-source. Built initially as a personal endeavor, it is now evolving into a community-driven platform accessible to everyone.",
   },
 ];
 
@@ -47,11 +47,11 @@ export default function AboutPage() {
               About <span className="gradient-text">Siyarix</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              Siyarix is an AI-native cybersecurity orchestration platform that
-              translates natural language into deterministic, multi-tool
-              security workflows. Born from the conviction that advanced
-              security operations should not require a dozen disconnected tools
-              and a PhD to operate them.
+              Siyarix started as a personal project to solve a complex problem:
+              orchestrating security tools using natural language. It is now growing
+              into an open-source cybersecurity platform, built with the conviction
+              that advanced security operations shouldn&apos;t require a dozen disconnected
+              tools and a PhD to operate them.
             </p>
           </div>
         </div>
@@ -69,11 +69,11 @@ export default function AboutPage() {
               Democratizing Security Operations
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
-              We believe that AI-native security orchestration should not be a
-              privilege reserved for well-funded enterprise teams. Our mission
-              is to make intelligent, automated security workflows accessible
-              to every practitioner — from solo researchers and penetration
-              testers to large SOC teams.
+              I believe that AI-native security orchestration shouldn&apos;t be a
+              privilege reserved for well-funded teams. My mission is to make
+              intelligent, automated security workflows accessible to every
+              practitioner — empowering solo researchers, developers, and
+              penetration testers alike.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate-400">
               By combining the power of large language models with a rich
@@ -132,16 +132,20 @@ export default function AboutPage() {
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-siyarix-500 to-accent">
                 <span className="text-2xl font-bold text-white">M</span>
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-white">
-                MD Mufthakherul Islam Miraz
-              </h3>
+              <Link href="/pathmaker" className="group/link block">
+                <h3 className="mt-4 text-lg font-semibold text-white transition-colors group-hover/link:text-siyarix-400">
+                  MD Mufthakherul Islam Miraz
+                </h3>
+              </Link>
               <p className="text-sm text-siyarix-400">
-                Founder &amp; Lead Developer
+                PathMaker
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                Architecting the future of AI-native cybersecurity
-                orchestration. Building Siyarix with a vision to make
-                intelligent security operations accessible to everyone.
+                Building Siyarix from a personal vision into a collaborative open-source platform.
+                <br />
+                <Link href="/pathmaker" className="mt-2 inline-block text-siyarix-400 hover:underline">
+                  Read the PathMaker&apos;s story &rarr;
+                </Link>
               </p>
             </div>
           </div>

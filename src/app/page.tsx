@@ -7,7 +7,6 @@ import {
   ArrowRight,
   GitFork,
   Terminal,
-  Cloud,
   Puzzle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,9 +20,9 @@ const features = [
   },
   {
     icon: Wrench,
-    title: "80+ Tool Parsers",
+    title: "110+ Tool Parsers",
     description:
-      "Structured output extraction from nmap, nuclei, masscan, gobuster, metasploit, trivy, semgrep, and 70+ more security tools — all plug-and-play.",
+      "Structured output extraction from nmap, nuclei, masscan, gobuster, metasploit, trivy, semgrep, and 100+ more security tools — all plug-and-play.",
   },
   {
     icon: Terminal,
@@ -33,15 +32,9 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Enterprise-Grade Security",
+    title: "Robust Security Built-in",
     description:
       "Two-stage permission gate, AES-256-GCM credential store, SHA-256 chained audit log, DLP engine, stealth mode, and OPSEC controls.",
-  },
-  {
-    icon: Cloud,
-    title: "Multi-Cloud & Compliance",
-    description:
-      "Compliance assessments for PCI-DSS, HIPAA, ISO 27001, SOC 2, NIST 800-53, and GDPR. Cloud posture scanning across AWS, Azure, GCP, and Kubernetes.",
   },
   {
     icon: Puzzle,
@@ -53,7 +46,7 @@ const features = [
 
 const stats = [
   { label: "AI Providers", value: "25+" },
-  { label: "Tool Parsers", value: "80+" },
+  { label: "Tool Parsers", value: "110+" },
   { label: "CLI Commands", value: "50+" },
   { label: "Test Files", value: "110+" },
 ];
@@ -72,11 +65,11 @@ export default function HomePage() {
               v1.0.0 — Stable Release
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              AI Cybersecurity{" "}
-              <span className="gradient-text">Orchestration</span> Platform
+              An Open-Source AI{" "}
+              <span className="gradient-text">Security</span> Orchestrator
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              Translate natural language security objectives into precise, multi-tool workflows.
+              A growing open-source project translating natural language security objectives into precise, multi-tool workflows.
               Describe what you want to accomplish — Siyarix handles the how.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -89,8 +82,14 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/about"
+                href="/install"
                 className="gradient-border rounded-xl bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:bg-white/10"
+              >
+                Install Now
+              </Link>
+              <Link
+                href="/about"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:bg-white/10"
               >
                 Learn More
               </Link>
@@ -102,7 +101,7 @@ export default function HomePage() {
               Quick Start
             </div>
             <pre className="mt-4 overflow-x-auto text-sm text-slate-300">
-              <code>{`$ pip install siyarix
+              <code>{`$ curl -fsSL https://siyarix.github.io/install.sh | bash
 $ siyarix                          # Launch the onboarding wizard
 $ siyarix scan quick example.com   # Run a quick port scan
 $ siyarix run "enumerate services" # Natural language command
@@ -133,11 +132,11 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Everything a security team needs
+              Built for the security community
             </h2>
             <p className="mt-4 text-slate-400">
               From reconnaissance to reporting — Siyarix unifies your security toolchain under a
-              single, intelligent interface.
+              single, intelligent, open-source interface.
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -164,11 +163,10 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
           <div className="rounded-2xl border border-white/5 bg-gradient-to-br from-siyarix-900/30 via-surface to-accent/5 p-8 text-center sm:p-12 lg:p-16">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              Ready to transform your security operations?
+              Ready to join the open-source security movement?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-slate-400">
-              Join the community of security professionals using AI-native orchestration to work
-              smarter, faster, and more effectively.
+              Join the growing community of security professionals and researchers exploring AI-native orchestration.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

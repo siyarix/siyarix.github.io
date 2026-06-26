@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 interface Milestone {
-  quarter: string;
-  year: string;
+  date: string;
+  phase: string;
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -27,76 +27,36 @@ interface Milestone {
 
 const milestones: Milestone[] = [
   {
-    quarter: "Q1",
-    year: "2024",
-    title: "Initial Concept & Prototype",
+    date: "June 24",
+    phase: "2026",
+    title: "The Core Engine & Planner Evolution",
     description:
-      "Bare-metal prototype with basic nmap parsing proved the core thesis: natural language can orchestrate security tooling. The first 500 lines of Python became the foundation of everything that followed.",
-    icon: History,
-  },
-  {
-    quarter: "Q2",
-    year: "2024",
-    title: "Open-Source Release",
-    description:
-      "Siyarix went public on GitHub. The community began forming around the shared vision of AI-driven security automation. Early contributors shaped the parser architecture and CLI design.",
-    icon: GitBranch,
-  },
-  {
-    quarter: "Q3",
-    year: "2024",
-    title: "10+ AI Providers & Autonomous Mode",
-    description:
-      "Integrated providers across OpenAI, Anthropic, Google, and open-source models. Introduced autonomous mode — the platform's first self-directed execution engine capable of goal-driven security workflows.",
+      "A massive sprint of foundational architecture. We introduced robust offline execution with the Registry mode, wired up comprehensive step-by-step progress tracking, and dramatically expanded the AI planner with advanced intent mapping across 20+ crucial system and security tools.",
     icon: Rocket,
   },
   {
-    quarter: "Q4",
-    year: "2024",
-    title: "50+ Tool Parsers & Compliance Engine",
+    date: "June 25",
+    phase: "2026",
+    title: "v1.0.0 Stable Release & Hardening",
     description:
-      "Crossed 50 structured parsers for nmap, nuclei, masscan, gobuster, and dozens more. Launched the compliance assessment engine covering PCI-DSS, HIPAA, ISO 27001, and SOC 2. First enterprise adopters came onboard.",
-    icon: Star,
-  },
-  {
-    quarter: "Q1",
-    year: "2025",
-    title: "v2.0 — Swarm Multi-Agent Orchestration",
-    description:
-      "Architected a swarm-based multi-agent system enabling parallel intelligence across specialized agents. Surpassed 80 tool parsers. The orchestration layer became fully recursive and adaptive.",
-    icon: Globe,
-  },
-  {
-    quarter: "Q2",
-    year: "2025",
-    title: "Offline Mode & Deep Scan Engine",
-    description:
-      "Delivered fully air-gapped operation with the Registry execution mode. The deep scan engine brought multi-layered reconnaissance and a continuous learning system that improves results over time.",
+      "Siyarix reached its first stable release milestone. We migrated from hardcoded data to a persistent SQLite backend, introduced the Deep Scan engine, established 9 rigorous CI/CD workflows for ultimate reliability, and completely overhauled our documentation structure.",
     icon: Shield,
   },
   {
-    quarter: "Q3",
-    year: "2025",
-    title: "REST API & Mobile Installers",
+    date: "June 26",
+    phase: "2026",
+    title: "Stabilization & Test Coverage",
     description:
-      "Previewed the REST API for headless integration. Shipped iOS and Android installers, extending Siyarix to mobile security workflows and on-the-go operations.",
+      "A concentrated focus on stability across platforms. We resolved critical Windows-specific edge cases, synchronized integration tests with our new execution engine, and ensured complete zero-trust reliability across all orchestration routines.",
     icon: Code,
   },
   {
-    quarter: "Q4",
-    year: "2025",
-    title: "25+ AI Providers, 47 CI/CD Workflows",
+    date: "Present",
+    phase: "Future",
+    title: "Sustainable Open Source",
     description:
-      "Expanded to 25+ AI providers with automatic failover and ensemble voting. 47 CI/CD workflows hardened the delivery pipeline. Surpassed 110 test files with comprehensive coverage.",
-    icon: Users,
-  },
-  {
-    quarter: "H1",
-    year: "2026",
-    title: "v1.0.0 — Stable Release",
-    description:
-      "Moved to the siyarix organization. v1.0.0 marked the first stable release — four execution modes, 80+ parsers, enterprise compliance, and a thriving open-source community. The platform is production-ready.",
-    icon: Shield,
+      "Siyarix is now an actively growing open-source platform. The journey continues as we refine the AI context engines, invite community contributions, and push the boundaries of what autonomous orchestration can achieve.",
+    icon: Globe,
   },
 ];
 
@@ -133,8 +93,8 @@ export default function JourneyPage() {
               Our <span className="gradient-text">Journey</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              From a bold prototype to a production-grade AI cybersecurity platform
-              — every milestone that shaped Siyarix.
+              From an initial idea to a highly capable AI cybersecurity orchestrator
+              — a rapid sprint of intense development that shaped Siyarix.
             </p>
           </div>
         </div>
@@ -153,7 +113,7 @@ export default function JourneyPage() {
 
               return (
                 <div
-                  key={`${milestone.year}-${milestone.quarter}`}
+                  key={`${milestone.phase}-${milestone.date}`}
                   className={cn(
                     "relative mb-12 pl-10 sm:mb-16 sm:w-1/2 sm:pl-0 lg:mb-20",
                     isLeft
@@ -189,7 +149,7 @@ export default function JourneyPage() {
                     )}
                   >
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-siyarix-500/20 bg-siyarix-500/10 px-3 py-1 text-xs font-medium text-siyarix-300">
-                      {milestone.quarter} {milestone.year}
+                      {milestone.date}, {milestone.phase}
                     </span>
                   </div>
 

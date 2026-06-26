@@ -26,8 +26,8 @@ const items: RoadmapItem[] = [
   {
     title: "Cloud Scanner",
     description: "Multi-cloud posture scanning for AWS, Azure, GCP",
-    status: "now",
-    statusLabel: "In Development",
+    status: "later",
+    statusLabel: "Future",
     icon: Building2,
   },
   {

@@ -38,12 +38,12 @@ const pillars = [
   },
   {
     icon: BarChart3,
-    title: "Enterprise Readiness",
+    title: "Sustainable Open Source",
     progress: 55,
     description:
-      "Achieve production-grade reliability, compliance, and support",
+      "Build a project that can be independently maintained by the community",
     status:
-      "Compliance frameworks mapped; SSO, RBAC, and SLAs under active development.",
+      "Core architecture is modular; documentation and contributor guides are being drafted.",
     color: "bg-siyarix-500",
   },
   {
@@ -95,11 +95,11 @@ export default function VisionPage() {
               <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
                 We envision a world where security professionals can describe
                 their objectives in natural language and have them executed
-                across any tool, any cloud, and any environment — autonomously,
-                safely, and at scale. Siyarix bridges the gap between human
+                across any tool, any cloud, and any environment — autonomously
+                and safely. Siyarix bridges the gap between human
                 intent and machine execution, making expert-level security
-                operations accessible to every organization, regardless of team
-                size or budget.
+                orchestration accessible to individual developers, researchers, 
+                and the open-source community.
               </p>
               <div className="mt-6 border-l-2 border-accent pl-4">
                 <p className="text-sm italic text-slate-400">
