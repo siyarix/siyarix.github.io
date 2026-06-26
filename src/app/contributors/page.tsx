@@ -1,122 +1,54 @@
-"use client";
-
 import { Users, Heart, Star, Globe, GitFork, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-interface Contributor {
-  name: string;
-  username: string;
-  role: string;
-  color: string;
-  featured?: boolean;
+interface GitHubContributor {
+  login: string;
+  id: number;
+  avatar_url: string;
+  html_url: string;
+  contributions: number;
 }
 
-const contributors: Contributor[] = [
-  {
-    name: "MD Mufthakherul Islam Miraz",
-    username: "mufthakherul",
-    role: "Founder & Lead Developer",
-    color: "from-siyarix-500 to-accent",
-    featured: true,
-  },
-  {
-    name: "Siyarix Bot",
-    username: "siyarix-bot",
-    role: "Core Infrastructure",
-    color: "from-cyan-500 to-blue-600",
-  },
-  {
-    name: "Alex Rivera",
-    username: "security-contributor-1",
-    role: "Security Research",
-    color: "from-emerald-500 to-teal-600",
-  },
-  {
-    name: "Jamie Chen",
-    username: "parser-enthusiast",
-    role: "Parser Specialist",
-    color: "from-violet-500 to-purple-600",
-  },
-  {
-    name: "Sam Taylor",
-    username: "docs-writer-42",
-    role: "Documentation",
-    color: "from-amber-500 to-orange-600",
-  },
-  {
-    name: "Priya Sharma",
-    username: "ai-integrator",
-    role: "Provider Integration",
-    color: "from-pink-500 to-rose-600",
-  },
-  {
-    name: "Chris Miller",
-    username: "test-automator",
-    role: "Testing & QA",
-    color: "from-indigo-500 to-blue-600",
-  },
-  {
-    name: "Morgan Lee",
-    username: "code-reviewer-7",
-    role: "Core Developer",
-    color: "from-lime-500 to-green-600",
-  },
-  {
-    name: "Taylor Kim",
-    username: "plugin-dev",
-    role: "Plugin Architecture",
-    color: "from-red-500 to-pink-600",
-  },
-  {
-    name: "Jordan Blake",
-    username: "ui-designer-xyz",
-    role: "Frontend & Design",
-    color: "from-sky-500 to-cyan-600",
-  },
-  {
-    name: "Casey Nguyen",
-    username: "security-auditor",
-    role: "Security Audit",
-    color: "from-fuchsia-500 to-purple-600",
-  },
-  {
-    name: "Riley Patel",
-    username: "perf-optimizer",
-    role: "Performance",
-    color: "from-teal-400 to-emerald-600",
-  },
-  {
-    name: "Avery Thompson",
-    username: "community-mgr",
-    role: "Community",
-    color: "from-orange-400 to-red-500",
-  },
-  {
-    name: "Drew Martinez",
-    username: "release-eng",
-    role: "Release Engineering",
-    color: "from-blue-400 to-indigo-600",
-  },
-  {
-    name: "Quinn Johnson",
-    username: "database-expert",
-    role: "Database Systems",
-    color: "from-green-400 to-lime-600",
-  },
+const colors = [
+  "from-siyarix-500 to-accent",
+  "from-cyan-500 to-blue-600",
+  "from-emerald-500 to-teal-600",
+  "from-violet-500 to-purple-600",
+  "from-amber-500 to-orange-600",
+  "from-pink-500 to-rose-600",
 ];
 
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2);
-}
+export default async function ContributorsPage() {
+  let contributors: GitHubContributor[] = [];
+  
+  try {
+    const res = await fetch("https://api.github.com/repos/mufthakherul/siyarix/contributors", {
+      next: { revalidate: 3600 },
+    });
+    if (res.ok) {
+      contributors = await res.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch contributors:", error);
+  }
 
-export default function ContributorsPage() {
-  const featured = contributors.find((c) => c.featured);
-  const rest = contributors.filter((c) => !c.featured);
+  // Ensure there's a fallback if the API fails or returns empty
+  if (!contributors || contributors.length === 0) {
+    contributors = [
+      {
+        login: "mufthakherul",
+        id: 1,
+        avatar_url: "https://github.com/mufthakherul.png",
+        html_url: "https://github.com/mufthakherul",
+        contributions: 1,
+      }
+    ];
+  }
+
+  // Separate the top contributor (founder/featured) from the rest
+  const featured = contributors[0];
+  const rest = contributors.slice(1);
 
   return (
     <>
@@ -134,7 +66,7 @@ export default function ContributorsPage() {
               Our <span className="gradient-text">Contributors</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              Siyarix is built by a global community of security researchers,
+              Siyarix is built by a growing community of security researchers,
               developers, and cybersecurity practitioners. Every contribution —
               whether code, documentation, or ideas — helps make AI-native
               security operations accessible to everyone.
@@ -148,9 +80,9 @@ export default function ContributorsPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
-              { icon: Users, label: "Total Contributors", value: "15+" },
-              { icon: Globe, label: "Countries", value: "5+" },
-              { icon: Star, label: "First Commit", value: "2024" },
+              { icon: Users, label: "Total Contributors", value: `${contributors.length}+` },
+              { icon: Globe, label: "Reach", value: "Global" },
+              { icon: Star, label: "First Commit", value: "2026" },
               { icon: GitFork, label: "Latest Release", value: "v1.0.0" },
             ].map((stat) => (
               <div
@@ -176,31 +108,35 @@ export default function ContributorsPage() {
               <div className="rounded-xl border border-white/5 bg-white/[0.02] p-8 text-center transition-all hover:border-white/10 hover:bg-white/[0.04]">
                 <div
                   className={cn(
-                    "mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br",
-                    featured.color
+                    "mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-siyarix-500 to-accent p-[3px]"
                   )}
                 >
-                  <span className="text-3xl font-bold text-white">
-                    {getInitials(featured.name)}
-                  </span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={featured.avatar_url} alt={featured.login} className="h-full w-full rounded-full object-cover bg-black" />
                 </div>
                 <h3 className="mt-5 text-xl font-semibold text-white">
-                  {featured.name}
+                  {featured.login}
                 </h3>
-                <p className="text-siyarix-400">{featured.role}</p>
+                <p className="text-siyarix-400">PathMaker & Lead Developer</p>
                 <p className="mt-4 text-sm leading-relaxed text-slate-400">
                   Architecting the future of AI-native cybersecurity
                   orchestration. Building Siyarix with a vision to make
                   intelligent security operations accessible to everyone.
                 </p>
-                <Link
-                  href={`https://github.com/${featured.username}`}
-                  className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-siyarix-400"
-                >
-                  <GitFork className="h-4 w-4" />
-                  @{featured.username}
-                  <ExternalLink className="h-3 w-3" />
-                </Link>
+                <div className="mt-5 flex items-center justify-center gap-4 text-sm text-slate-400">
+                  <span>{featured.contributions} contributions</span>
+                  <span className="text-white/20">&bull;</span>
+                  <Link
+                    href={featured.html_url}
+                    className="inline-flex items-center gap-1.5 transition-colors hover:text-siyarix-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <GitFork className="h-4 w-4" />
+                    @{featured.login}
+                    <ExternalLink className="h-3 w-3" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -208,57 +144,63 @@ export default function ContributorsPage() {
       )}
 
       {/* Contributor Grid */}
-      <section className="border-b border-white/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Community Contributors
-            </h2>
-            <p className="mt-4 text-slate-400">
-              Every contributor who has helped shape the Siyarix platform.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((contributor) => (
-              <div
-                key={contributor.username}
-                className="group rounded-xl border border-white/5 bg-white/[0.02] p-6 transition-all hover:border-white/10 hover:bg-white/[0.04]"
-              >
-                <div className="flex items-center gap-4">
+      {rest.length > 0 && (
+        <section className="border-b border-white/5">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                Community Contributors
+              </h2>
+              <p className="mt-4 text-slate-400">
+                Every contributor who has helped shape the Siyarix platform.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {rest.map((contributor, index) => {
+                const colorClass = colors[index % colors.length];
+                return (
                   <div
-                    className={cn(
-                      "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br",
-                      contributor.color
-                    )}
+                    key={contributor.login}
+                    className="group rounded-xl border border-white/5 bg-white/[0.02] p-6 transition-all hover:border-white/10 hover:bg-white/[0.04]"
                   >
-                    <span className="text-sm font-bold text-white">
-                      {getInitials(contributor.name)}
-                    </span>
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={cn(
+                          "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br p-[2px]",
+                          colorClass
+                        )}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={contributor.avatar_url} alt={contributor.login} className="h-full w-full rounded-full object-cover bg-black" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="truncate font-semibold text-white">
+                          {contributor.login}
+                        </h3>
+                        <p className="text-sm text-siyarix-400">
+                          {contributor.contributions} contributions
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                      <GitFork className="h-3.5 w-3.5" />
+                      <Link
+                        href={contributor.html_url}
+                        className="truncate text-slate-400 transition-colors hover:text-siyarix-400"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        @{contributor.login}
+                      </Link>
+                      <ExternalLink className="h-3 w-3 shrink-0 text-slate-600" />
+                    </div>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="truncate font-semibold text-white">
-                      {contributor.name}
-                    </h3>
-                    <p className="text-sm text-siyarix-400">
-                      {contributor.role}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
-                  <GitFork className="h-3.5 w-3.5" />
-                  <Link
-                    href={`https://github.com/${contributor.username}`}
-                    className="truncate text-slate-400 transition-colors hover:text-siyarix-400"
-                  >
-                    @{contributor.username}
-                  </Link>
-                  <ExternalLink className="h-3 w-3 shrink-0 text-slate-600" />
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA */}
       <section>
@@ -278,15 +220,19 @@ export default function ContributorsPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="https://github.com/siyarix/siyarix/blob/main/CONTRIBUTING.md"
+                href="https://github.com/mufthakherul/siyarix/blob/main/CONTRIBUTING.md"
                 className="inline-flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Heart className="h-4 w-4" />
                 Contribution Guide
               </Link>
               <Link
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.02] px-6 py-3 text-sm font-medium text-slate-300 transition-all hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitFork className="h-4 w-4" />
                 GitHub Repository
