@@ -9,6 +9,14 @@ import {
   FlaskConical,
   Building2,
   Workflow,
+  Shield,
+  Cpu,
+  Bot,
+  Database,
+  Terminal,
+  FileText,
+  EyeOff,
+  SlidersHorizontal,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -23,82 +31,85 @@ interface RoadmapItem {
 }
 
 const items: RoadmapItem[] = [
+  // --- NOW ---
   {
-    title: "Cloud Scanner",
-    description: "Multi-cloud posture scanning for AWS, Azure, GCP",
-    status: "later",
-    statusLabel: "Future",
-    icon: Building2,
-  },
-  {
-    title: "Mobile Scanner",
-    description: "APK analysis, iOS binary inspection",
+    title: "Target Masking System (Privacy Shield)",
+    description: "Intercepts and redacts sensitive target information (IPs, subdomains, internal hosts) before queries are sent to external LLMs, dynamically de-masking them for local execution to ensure absolute compliance and data privacy.",
     status: "now",
-    statusLabel: "In Development",
-    icon: Route,
+    statusLabel: "In Active Development",
+    icon: EyeOff,
   },
   {
-    title: "IoT Scanner",
-    description: "Firmware analysis, serial protocol scanning",
+    title: "Advanced Plugin & Domain Architecture",
+    description: "Re-architecting plugins as self-contained security domains (SAST, Forensics, Cloud, Compliance) with isolated intent triggers, execution phases, and custom tool handlers, allowing modular and extensible development.",
     status: "now",
-    statusLabel: "In Development",
-    icon: FlaskConical,
+    statusLabel: "In Active Development",
+    icon: SlidersHorizontal,
   },
   {
-    title: "REST API",
-    description: "Full REST API with JWT authentication for headless operation",
+    title: "Offline NLP & Semantic Parsing",
+    description: "Integrating tiny, local ONNX-based semantic embedding models to enhance zero-dependency intent mapping and complex parameter extraction without requiring network connectivity.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Cpu,
+  },
+  {
+    title: "Self-Healing Parser Upgrades",
+    description: "Upgrading the core parser registry to support dynamic tool output adapters, automatically resolving structural changes and command-line drift in upstream security tools.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Terminal,
+  },
+  // --- NEXT ---
+  {
+    title: "Remote Access Interfaces",
+    description: "Introducing Slack, Discord, and Telegram chatbot integrations to remotely execute scans, approve workflow steps, and receive real-time alerts via secure webhook gateways.",
     status: "next",
     statusLabel: "Up Next",
-    icon: ArrowRight,
+    icon: Bot,
   },
   {
-    title: "Multi-Model Ensemble UI",
-    description: "Visual interface for ensemble voting configuration",
+    title: "Continuous Learning System (CLS) v2",
+    description: "Upgrading the skill library with sqlite-vss vector search, interactive reinforcement learning, and advanced generalization of variables beyond simple target placeholders.",
     status: "next",
     statusLabel: "Up Next",
-    icon: Sparkles,
+    icon: Database,
   },
   {
-    title: "SIEM Integration",
-    description: "Real-time forwarding to Splunk, ELK, and Azure Sentinel",
+    title: "Parallel Tool Execution Pool",
+    description: "Orchestrating concurrent security operations via an advanced worker pool with customized timeout gates, syntax auto-repair, and graceful interruption handling.",
     status: "next",
     statusLabel: "Up Next",
     icon: Workflow,
   },
   {
-    title: "Import Pipeline",
-    description: "Nessus, Burp, Metasploit, STIX/OpenIOC import support",
+    title: "Offline Vulnerability Correlator",
+    description: "Developing local heuristics to cross-reference scanning results, reduce duplicates, and automatically calculate contextual CVSS threat levels.",
     status: "next",
     statusLabel: "Up Next",
-    icon: Clock,
+    icon: Shield,
+  },
+  // --- LATER ---
+  {
+    title: "Advanced Report Generation",
+    description: "Generating highly detailed interactive HTML, PDF, and Markdown reports offline, with native formats ready for direct ingestion into SIEM platforms like Splunk or ELK.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: FileText,
   },
   {
-    title: "Canary Token Management",
-    description: "Deploy and monitor honeytokens across infrastructure",
+    title: "AI Playground & Sandbox",
+    description: "An isolated, web-based simulation environment for safe, real-time testing and debugging of autonomous planner scripts and plugin policies.",
     status: "later",
-    statusLabel: "Future",
-    icon: Route,
-  },
-  {
-    title: "Team Collaboration",
-    description: "Multi-user shared sessions with role-based access",
-    status: "later",
-    statusLabel: "Future",
-    icon: Building2,
-  },
-  {
-    title: "Web Dashboard",
-    description: "Browser-based dashboard for visual workflow management",
-    status: "later",
-    statusLabel: "Future",
-    icon: Sparkles,
-  },
-  {
-    title: "AI Playground",
-    description: "Interactive environment for testing and tuning AI configurations",
-    status: "later",
-    statusLabel: "Future",
+    statusLabel: "Future Vision",
     icon: FlaskConical,
+  },
+  {
+    title: "Autonomic Registry Healing",
+    description: "Automatically detecting local version upgrades of system-installed security tools and auto-adjusting Siyarix parsing regex to avoid extraction failures.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Sparkles,
   },
 ];
 
@@ -131,8 +142,7 @@ export default function RoadmapPage() {
           Product <span className="gradient-text">Roadmap</span>
         </h1>
         <p className="mt-4 text-slate-400">
-          A look at what we&apos;re building now and what&apos;s on the horizon for the Siyarix
-          platform.
+          A look at the gaps we are addressing and the features on our horizon as we scale Siyarix.
         </p>
       </div>
 
@@ -159,7 +169,7 @@ export default function RoadmapPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {(["now", "next", "later"] as const).map((category) => (
             <div key={category}>
-              <h3 className="mb-4 text-lg font-semibold text-white capitalize">
+              <h3 className="mb-4 text-lg font-semibold text-white capitalize border-b border-white/5 pb-2">
                 {category === "now"
                   ? "Now — In Progress"
                   : category === "next"
@@ -196,18 +206,20 @@ function RoadmapCard({ item }: { item: RoadmapItem }) {
           <Icon className="h-5 w-5 text-siyarix-400" />
         </div>
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <h3 className="font-semibold text-white">{item.title}</h3>
+          <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap justify-between">
+            <h3 className="font-semibold text-white group-hover:text-siyarix-300 transition-colors">
+              {item.title}
+            </h3>
             <span
               className={cn(
-                "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium",
+                "inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium shrink-0",
                 statusBadgeStyles[item.status]
               )}
             >
               {item.statusLabel}
             </span>
           </div>
-          <p className="mt-1 text-sm leading-relaxed text-slate-400">
+          <p className="mt-2 text-xs leading-relaxed text-slate-400">
             {item.description}
           </p>
         </div>
