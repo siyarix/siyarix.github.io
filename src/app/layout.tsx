@@ -123,10 +123,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.github.com https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com;"
         />
       </head>
