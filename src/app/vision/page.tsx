@@ -9,7 +9,7 @@ const pillars = [
   {
     icon: Target,
     title: "Universal Security Automation",
-    progress: 65,
+    progress: 51,
     description:
       "Make every security tool accessible through simple, natural language intents.",
     status:
@@ -19,7 +19,7 @@ const pillars = [
   {
     icon: Lock,
     title: "Air-Gapped & Offline Autonomy",
-    progress: 60,
+    progress: 45,
     description:
       "Ensure the orchestrator runs safely in offline environments without external LLM API dependencies.",
     status:
@@ -29,7 +29,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Zero-Trust AI Architecture",
-    progress: 50,
+    progress: 40,
     description:
       "Build execution systems that are safe, sandboxed, and privacy-respecting by default.",
     status:
@@ -79,7 +79,7 @@ export default function VisionPage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5 text-sm text-accent">
               <Eye className="h-3.5 w-3.5" />
-              Our North Star
+              Our Open-Eyed Dream
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Vision & <span className="gradient-text">Goals</span>
