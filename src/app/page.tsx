@@ -74,7 +74,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/20 transition-all duration-300 hover:bg-siyarix-500 hover:-translate-y-0.5 active:scale-98"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -174,7 +174,7 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all duration-300 hover:bg-siyarix-500 hover:-translate-y-0.5 active:scale-98"
                 target="_blank"
                 rel="noopener noreferrer"
