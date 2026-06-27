@@ -127,7 +127,7 @@ export default async function ContributorsPage() {
                 <h3 className="mt-5 text-xl font-semibold text-white">
                   {featured.login}
                 </h3>
-                <p className="text-siyarix-400">PathMaker & Lead Developer</p>
+                <p className="text-siyarix-400">PathMaker</p>
                 <p className="mt-4 text-sm leading-relaxed text-slate-400">
                   Architecting the future of AI-native cybersecurity
                   orchestration. Building Siyarix with a vision to make
