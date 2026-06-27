@@ -108,6 +108,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/assets/logo.png",
   },
+  referrer: "strict-origin-when-cross-origin",
 };
 
 export default function RootLayout({
@@ -117,6 +118,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.github.com https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com;"
+        />
+      </head>
       <body className={`${inter.className} min-h-screen bg-surface antialiased`}>
         <div className="flex min-h-screen flex-col relative overflow-hidden">
           {/* Animated Background Grids */}
