@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const keyPoints = [
   "Report vulnerabilities privately — do not disclose publicly",
-  "PGP-encrypted email to maintainers is the preferred reporting method",
-  "Critical issues receive an initial response within 7 days",
-  "High-severity issues receive an initial response within 14 days",
-  "Medium-severity issues receive an initial response within 30 days",
+  "Email to maintainers is the preferred reporting method",
+  "Critical issues receive an initial response within 48 hours",
+  "High-severity issues receive an initial response within 72 hours",
+  "Medium-severity issues receive an initial response within 7 days",
 ];
 
 export default function SecurityPage() {
