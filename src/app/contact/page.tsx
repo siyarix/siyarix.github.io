@@ -26,7 +26,7 @@ const contactCards = [
     title: "GitHub Discussions",
     description:
       "Ask questions, share ideas, and connect with the community. Best for general help and feature discussions.",
-    href: "https://github.com/siyarix/siyarix/discussions",
+    href: "https://github.com/mufthakherul/siyarix/discussions",
     label: "Join the Conversation",
   },
   {
@@ -34,7 +34,7 @@ const contactCards = [
     title: "GitHub Issues",
     description:
       "Report bugs, request features, or track ongoing work. Include reproduction steps when reporting issues.",
-    href: "https://github.com/siyarix/siyarix/issues",
+    href: "https://github.com/mufthakherul/siyarix/issues",
     label: "Open an Issue",
   },
   {
@@ -42,17 +42,17 @@ const contactCards = [
     title: "Security Reports",
     description:
       "Disclose vulnerabilities responsibly. We follow industry-standard disclosure coordination and aim to respond within 24 hours.",
-    href: "https://github.com/siyarix/siyarix/blob/main/SECURITY.md",
+    href: "https://github.com/mufthakherul/siyarix/blob/main/SECURITY.md",
     label: "View Security Policy",
   },
-  {
-    icon: Mail,
-    title: "Email",
-    description:
-      "For private inquiries, partnership opportunities, or sensitive communications. Expect a response within 48 hours.",
-    href: "mailto:security@siyarix.dev",
-    label: "security@siyarix.dev",
-  },
+  //{
+  //  icon: Mail,
+  //  title: "Email",
+  //  description:
+  //    "For private inquiries, partnership opportunities, or sensitive communications. Expect a response within 48 hours.",
+  //  href: "mailto:",
+  //  label: "Comming soon",
+  //},
 ];
 
 export default function ContactPage() {
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 shape the core platform.
               </p>
               <a
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-siyarix-400 transition-colors hover:text-siyarix-300"
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 contributors in the community.
               </p>
               <a
-                href="https://github.com/siyarix/siyarix/discussions"
+                href="https://github.com/mufthakherul/siyarix/discussions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-siyarix-400 transition-colors hover:text-siyarix-300"
@@ -183,7 +183,7 @@ export default function ContactPage() {
                 Siyarix to your team.
               </p>
               <a
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-siyarix-400 transition-colors hover:text-siyarix-300"
@@ -255,7 +255,7 @@ export default function ContactPage() {
               line.
             </p>
             <a
-              href="https://github.com/siyarix/siyarix/discussions"
+              href="https://github.com/mufthakherul/siyarix/discussions"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500"
