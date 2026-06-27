@@ -20,6 +20,10 @@ import {
   Lock,
   Boxes,
   Zap,
+  UserCheck,
+  Eye,
+  Settings,
+  ShieldAlert,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -63,6 +67,13 @@ const items: RoadmapItem[] = [
     statusLabel: "In Active Development",
     icon: Cpu,
   },
+  {
+    title: "Adaptive Stealth Intelligence",
+    description: "Overhauling stealth controls to dynamically throttle scan rates, randomize intervals, rotate User-Agents, and change network signatures automatically when target IDS/IPS alerts are suspected.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Eye,
+  },
 
   // --- NEXT ---
   {
@@ -93,6 +104,20 @@ const items: RoadmapItem[] = [
     statusLabel: "Up Next",
     icon: Zap,
   },
+  {
+    title: "EPSS Threat Prioritization",
+    description: "Extending the local CVSS scorer with live EPSS (Exploit Prediction Scoring System) feeds to score and prioritize vulnerabilities based on actual real-world exploitation probability.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: ShieldAlert,
+  },
+  {
+    title: "Hardened Auto-Installer",
+    description: "Upgrading the automatic tool downloader with checksum validations, GPG key signature checks, and isolated virtual environments (venvs) to prevent supply chain attacks during runtimes.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Terminal,
+  },
 
   // --- LATER ---
   {
@@ -108,6 +133,13 @@ const items: RoadmapItem[] = [
     status: "later",
     statusLabel: "Future Vision",
     icon: Building2,
+  },
+  {
+    title: "Interactive Web Onboarding (GUI)",
+    description: "Replacing the CLI onboarding script with a browser-based setup wizard. Visually test API keys, configure AI providers, verify tool dependencies, and manage master secrets.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: UserCheck,
   },
   {
     title: "Remote Gateway Integrations (ChatOps)",
@@ -226,12 +258,12 @@ function RoadmapCard({ item }: { item: RoadmapItem }) {
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap justify-between">
-            <h3 className="font-semibold text-white group-hover:text-siyarix-300 transition-colors">
+            <h3 className="font-semibold text-white group-hover:text-siyarix-300 transition-colors text-sm">
               {item.title}
             </h3>
             <span
               className={cn(
-                "inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium shrink-0",
+                "inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-medium shrink-0",
                 statusBadgeStyles[item.status]
               )}
             >
