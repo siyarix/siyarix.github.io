@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Target, Eye, Heart, Shield, BarChart3, Globe } from "lucide-react";
+import { Target, Eye, Heart, Shield, Globe, Lock, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Vision & Goals",
@@ -9,52 +9,62 @@ const pillars = [
   {
     icon: Target,
     title: "Universal Security Automation",
-    progress: 75,
+    progress: 90,
     description:
-      "Make every security tool accessible through natural language",
+      "Make every security tool accessible through simple, natural language intents.",
     status:
-      "Majority of core tools integrated — CLI and registry modes stable.",
+      "Completed: 110+ parsers, offline registry, hybrid execution modes. In Progress: Extending coverage for cloud SAST frameworks.",
     color: "bg-siyarix-600",
+  },
+  {
+    icon: Lock,
+    title: "Air-Gapped & Offline Autonomy",
+    progress: 85,
+    description:
+      "Ensure the orchestrator runs safely in offline environments without external LLM API dependencies.",
+    status:
+      "Completed: Ollama and llama.cpp auto-starters, GGUF caching, and 725+ local tools database. In Progress: Offline vector-based RAG search.",
+    color: "bg-siyarix-500",
   },
   {
     icon: Shield,
     title: "Zero-Trust AI Architecture",
-    progress: 60,
+    progress: 80,
     description:
-      "Build AI systems that are safe, auditable, and privacy-respecting by default",
+      "Build execution systems that are safe, sandboxed, and privacy-respecting by default.",
     status:
-      "Two-stage permission gate and audit log shipping; full attestation in progress.",
+      "Completed: Two-stage permission gate, AES-256-GCM credentials encryption, and target-masking DLP engine. In Progress: Containerized sandbox runtimes.",
     color: "bg-siyarix-500",
+  },
+  {
+    icon: Sparkles,
+    title: "Continuous Learning & Intent Mapping",
+    progress: 75,
+    description:
+      "Enable the orchestrator to dynamically memorize successful workflows and build custom execution skills.",
+    status:
+      "Completed: Jaccard similarity confidence scoring engine and learning_system.py hooks. In Progress: Cross-session memory sync.",
+    color: "bg-siyarix-400",
   },
   {
     icon: Heart,
     title: "Community-Driven Development",
-    progress: 80,
+    progress: 70,
     description:
-      "Foster an open ecosystem of plugins, parsers, and providers",
+      "Foster an open, collaborative ecosystem of security plugins, parsers, and custom model templates.",
     status:
-      "Plugin discovery and provider adapters live; community contributions growing.",
+      "Completed: Static website, live contributors board, public repository release. In Progress: Launching community parser hub.",
     color: "bg-siyarix-400",
-  },
-  {
-    icon: BarChart3,
-    title: "Sustainable Open Source",
-    progress: 55,
-    description:
-      "Build a project that can be independently maintained by the community",
-    status:
-      "Core architecture is modular; documentation and contributor guides are being drafted.",
-    color: "bg-siyarix-500",
   },
   {
     icon: Globe,
-    title: "Cross-Platform Ubiquity",
-    progress: 70,
+    title: "Cross-Platform Portability",
+    progress: 85,
     description:
-      "Run anywhere — Linux, macOS, Windows, mobile, air-gapped",
+      "Run reliably across Linux, macOS, and Windows environments.",
     status:
-      "Linux and macOS stable; Windows build and container images available.",
-    color: "bg-siyarix-400",
+      "Completed: Linux/macOS installers, Windows command compatibility layers, and Ruff lint validations. In Progress: PWA distribution packaging.",
+    color: "bg-siyarix-500",
   },
 ];
 
