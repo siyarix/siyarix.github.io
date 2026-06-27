@@ -8,6 +8,8 @@ import {
   Shield,
   Code,
   Users,
+  Terminal,
+  Wrench,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,47 +33,71 @@ const milestones: Milestone[] = [
     phase: "Conception",
     title: "The Personal Project Origin",
     description:
-      "Siyarix began as a personal, private endeavor by the PathMaker. The primary goal was to explore how natural language planners and LLM reasoning loops could streamline tool executions for local security automation.",
+      "Siyarix began as a private command-line experiment by the PathMaker. The initial focus was exploring whether natural language instructions could be parsed into deterministic command sequences, laying the groundwork for the core intent routing model.",
     icon: Code,
   },
   {
     date: "May 10–15",
     phase: "Genesis",
-    title: "Core Import & Private Setup",
+    title: "Core Repository Migration & First Commit",
     description:
-      "The codebase was migrated from the PathMaker's personal project workspace into a dedicated Siyarix repository. The first formal commit was recorded, starting Siyarix as a structured open-source architecture project, though kept in a private repository for security testing and initial feedback.",
+      "The project was formalised and migrated from local workspaces into a dedicated private GitHub repository. On May 15, the first commit (abec71d) was recorded, establishing Siyarix as a package and setting up the CLI onboarding scaffolding.",
     icon: GitBranch,
   },
   {
-    date: "May 15 – June 23",
-    phase: "Development",
-    title: "Core Engine, Parsers, & Security Hardening",
+    date: "May 16–20",
+    phase: "Foundation",
+    title: "Offline Interpreter & Parser Scaffolding",
     description:
-      "An intensive active development sprint. We designed Siyarix's modular plugin architecture, implemented over 110 structured parsers, developed the target masking DLP engine, and constructed both the offline Registry and Hybrid execution engines.",
+      "An explosive sprint of 430+ commits. We designed the modular parser architecture, implemented initial threat routing logic, created indexable CLI templates, and registered the first core threat intelligence parsers (Amass, Subfinder, Shodan).",
+    icon: Users,
+  },
+  {
+    date: "May 21–31",
+    phase: "Expansion",
+    title: "Multi-Turn AgentLoop & SDK Integration",
+    description:
+      "We introduced the multi-turn AgentLoop module to allow direct LLM tool calling, added support for the OpenRouter adapter, and migrated the core LLM engines to the new google.genai SDK. Security enhancements included replacing default XML libraries with defusedxml to block XXE vulnerabilities.",
     icon: Rocket,
   },
   {
-    date: "June 24–26",
-    phase: "Hardening",
-    title: "SQLite Migration & Stabilization",
+    date: "June 1–15",
+    phase: "Local Autonomy",
+    title: "Local LLM Orchestration & Llama.cpp",
     description:
-      "Sprints focused on system stabilization and multi-platform support. We migrated runtime state to a persistent SQLite DB, integrated the Deep Scan model, resolved Windows permission edge-cases, and synchronized our CLI test suite.",
-    icon: Star,
+      "Over 280 commits focused on local, offline autonomy. We added native llama.cpp and Ollama installation hooks, handled dynamic GGUF cache extractions, and compiled a comprehensive database containing 725 cybersecurity tools to expand offline discovery.",
+    icon: Terminal,
+  },
+  {
+    date: "June 16–23",
+    phase: "Hardening",
+    title: "Continuous Learning Memory & OpSec Guards",
+    description:
+      "Added the Jaccard-based dynamic learning memory module (learning_system.py) to auto-generate custom execution skills. Enhanced subprocess safety by disabling stdin streams, implemented thread-safe locks on the audit log chain, and introduced Tokyo Night, Sunset, and Forest console themes.",
+    icon: Shield,
+  },
+  {
+    date: "June 24–26",
+    phase: "Stabilization",
+    title: "SQLite Migration & Platform Portability",
+    description:
+      "Sprints focused on cross-platform portability. Stored settings and execution states were migrated from flat files to a persistent SQLite DB. Windows NT chmod no-ops were patched, and integration tests were synchronized with the new step-level execution outputs.",
+    icon: Wrench,
   },
   {
     date: "June 27 (Today)",
-    phase: "v1.0.0 Launch",
-    title: "Stable Public Release",
+    phase: "v1.0.0 Release",
+    title: "Siyarix Goes Public!",
     description:
-      "Siyarix officially goes public! We published our GitHub repository to the open-source community alongside our first stable v1.0.0 stable release, enabling developers and researchers worldwide to collaborate on AI-native orchestration.",
-    icon: Shield,
+      "The Siyarix GitHub repository was officially transitioned from private to public! Siyarix launches its first stable v1.0.0 stable release, featuring over 1,200 commits of development history, and opens its doors to the global security community.",
+    icon: Star,
   },
   {
     date: "Present",
     phase: "Future",
     title: "Sustainable Open Source",
     description:
-      "Siyarix is now an actively growing public platform. The journey continues as we refine AI context engines, invite global contributions, and expand out modular security plugins (forensics, compliance, cloud SAST).",
+      "Siyarix is now an actively growing public platform. The journey continues as we refine AI context engines, invite global contributions, and expand our modular security plugins (forensics, compliance, cloud SAST).",
     icon: Globe,
   },
 ];
