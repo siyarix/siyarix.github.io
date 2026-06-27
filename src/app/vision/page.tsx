@@ -113,7 +113,7 @@ export default function VisionPage() {
               </div>
               <div className="mt-6 border-l-2 border-accent pl-4">
                 <p className="text-sm italic text-slate-400">
-                  &ldquo;We aim to reduce the complexity of security tooling so that practitioners can focus on understanding and resolving threats, rather than struggling with configuration syntax.&rdquo;
+                  &ldquo;Security operations should be defined by strategy, not by the friction of tooling—simplifying syntax and complexity so that practitioners can focus entirely on understanding and resolving threats.&rdquo;
                 </p>
               </div>
             </div>
