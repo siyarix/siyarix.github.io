@@ -10,6 +10,7 @@ import {
   Puzzle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import VersionBadge from "@/components/VersionBadge";
 
 const features = [
   {
@@ -56,14 +57,11 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.06),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:pt-32">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.08),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.06),transparent_50%)] pointer-events-none" />
+        <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:pt-32 relative z-10">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-siyarix-500/20 bg-siyarix-500/10 px-4 py-1.5 text-sm text-siyarix-300">
-              <Cpu className="h-3.5 w-3.5" />
-              v1.0.0 — Stable Release
-            </div>
+            <VersionBadge />
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               An Open-Source AI{" "}
               <span className="gradient-text">Security</span> Orchestrator
@@ -84,7 +82,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/install"
+                href="/install/"
                 className="gradient-border rounded-xl bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 active:scale-98"
               >
                 Install Now
@@ -191,7 +189,7 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
                 Read Full Documentation
               </Link>
               <Link
-                href="/contributors"
+                href="/contributors/"
                 className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 active:scale-98"
               >
                 Meet the Contributors

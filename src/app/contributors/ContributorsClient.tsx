@@ -35,9 +35,10 @@ const FALLBACK_CONTRIBUTORS: GitHubContributor[] = [
 export default function ContributorsClient() {
   const [contributors, setContributors] = useState<GitHubContributor[]>([]);
   const [loading, setLoading] = useState(true);
+  const [version, setVersion] = useState("v1.0.0");
 
   useEffect(() => {
-    async function fetchContributors() {
+    async function fetchData() {
       try {
         const res = await fetch("https://api.github.com/repos/mufthakherul/siyarix/contributors");
         if (res.ok) {
@@ -53,11 +54,39 @@ export default function ContributorsClient() {
       } catch (error) {
         console.error("Failed to fetch contributors:", error);
         setContributors(FALLBACK_CONTRIBUTORS);
+      }
+
+      try {
+        const res = await fetch("https://api.github.com/repos/mufthakherul/siyarix/releases/latest");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.tag_name) {
+            setVersion(data.tag_name);
+          } else {
+            const tagsRes = await fetch("https://api.github.com/repos/mufthakherul/siyarix/tags");
+            if (tagsRes.ok) {
+              const tags = await tagsRes.json();
+              if (tags && tags.length > 0 && tags[0].name) {
+                setVersion(tags[0].name);
+              }
+            }
+          }
+        } else {
+          const tagsRes = await fetch("https://api.github.com/repos/mufthakherul/siyarix/tags");
+          if (tagsRes.ok) {
+            const tags = await tagsRes.json();
+            if (tags && tags.length > 0 && tags[0].name) {
+              setVersion(tags[0].name);
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch version:", error);
       } finally {
         setLoading(false);
       }
     }
-    fetchContributors();
+    fetchData();
   }, []);
 
   const featured = contributors[0] || FALLBACK_CONTRIBUTORS[0];
@@ -67,9 +96,9 @@ export default function ContributorsClient() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.06),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:pt-32">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.08),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.06),transparent_50%)] pointer-events-none" />
+        <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:pt-32 relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-siyarix-500/20 bg-siyarix-500/10 px-4 py-1.5 text-sm text-siyarix-400">
               <Users className="h-3.5 w-3.5" />
@@ -106,7 +135,7 @@ export default function ContributorsClient() {
                   { icon: Users, label: "Total Contributors", value: `${contributors.length}` },
                   { icon: Globe, label: "Reach", value: "Global" },
                   { icon: Star, label: "First Commit", value: "2026" },
-                  { icon: GitFork, label: "Latest Release", value: "v1.0.0" },
+                  { icon: GitFork, label: "Latest Release", value: version },
                 ].map((stat) => (
                   <div
                     key={stat.label}
