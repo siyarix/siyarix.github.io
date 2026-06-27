@@ -27,35 +27,51 @@ interface Milestone {
 
 const milestones: Milestone[] = [
   {
-    date: "June 24",
-    phase: "2026",
-    title: "The Core Engine & Planner Evolution",
+    date: "Pre-May 2026",
+    phase: "Conception",
+    title: "The Personal Project Origin",
     description:
-      "A massive sprint of foundational architecture. We introduced robust offline execution with the Registry mode, wired up comprehensive step-by-step progress tracking, and dramatically expanded the AI planner with advanced intent mapping across 20+ crucial system and security tools.",
+      "Siyarix began as a personal, private endeavor by the PathMaker. The primary goal was to explore how natural language planners and LLM reasoning loops could streamline tool executions for local security automation.",
+    icon: Code,
+  },
+  {
+    date: "May 10–15",
+    phase: "Genesis",
+    title: "Core Import & Private Setup",
+    description:
+      "The codebase was migrated from the PathMaker's personal project workspace into a dedicated Siyarix repository. The first formal commit was recorded, starting Siyarix as a structured open-source architecture project, though kept in a private repository for security testing and initial feedback.",
+    icon: GitBranch,
+  },
+  {
+    date: "May 15 – June 23",
+    phase: "Development",
+    title: "Core Engine, Parsers, & Security Hardening",
+    description:
+      "An intensive active development sprint. We designed Siyarix's modular plugin architecture, implemented over 110 structured parsers, developed the target masking DLP engine, and constructed both the offline Registry and Hybrid execution engines.",
     icon: Rocket,
   },
   {
-    date: "June 25",
-    phase: "2026",
-    title: "v1.0.0 Stable Release & Hardening",
+    date: "June 24–26",
+    phase: "Hardening",
+    title: "SQLite Migration & Stabilization",
     description:
-      "Siyarix reached its first stable release milestone. We migrated from hardcoded data to a persistent SQLite backend, introduced the Deep Scan engine, established 9 rigorous CI/CD workflows for ultimate reliability, and completely overhauled our documentation structure.",
-    icon: Shield,
+      "Sprints focused on system stabilization and multi-platform support. We migrated runtime state to a persistent SQLite DB, integrated the Deep Scan model, resolved Windows permission edge-cases, and synchronized our CLI test suite.",
+    icon: Star,
   },
   {
-    date: "June 26",
-    phase: "2026",
-    title: "Stabilization & Test Coverage",
+    date: "June 27 (Today)",
+    phase: "v1.0.0 Launch",
+    title: "Stable Public Release",
     description:
-      "A concentrated focus on stability across platforms. We resolved critical Windows-specific edge cases, synchronized integration tests with our new execution engine, and ensured complete zero-trust reliability across all orchestration routines.",
-    icon: Code,
+      "Siyarix officially goes public! We published our GitHub repository to the open-source community alongside our first stable v1.0.0 stable release, enabling developers and researchers worldwide to collaborate on AI-native orchestration.",
+    icon: Shield,
   },
   {
     date: "Present",
     phase: "Future",
     title: "Sustainable Open Source",
     description:
-      "Siyarix is now an actively growing open-source platform. The journey continues as we refine the AI context engines, invite community contributions, and push the boundaries of what autonomous orchestration can achieve.",
+      "Siyarix is now an actively growing public platform. The journey continues as we refine AI context engines, invite global contributions, and expand out modular security plugins (forensics, compliance, cloud SAST).",
     icon: Globe,
   },
 ];
