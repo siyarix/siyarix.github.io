@@ -17,6 +17,9 @@ import {
   FileText,
   EyeOff,
   SlidersHorizontal,
+  Lock,
+  Boxes,
+  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -47,52 +50,75 @@ const items: RoadmapItem[] = [
     icon: SlidersHorizontal,
   },
   {
+    title: "Structured Parser Normalization",
+    description: "Re-architecting the 114+ security tool parsers under a strict, type-safe schema validation layer. Ensures all findings (severity, CVE, target) are validated prior to ingestion, eliminating raw, unvalidated dict mappings.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Boxes,
+  },
+  {
     title: "Offline NLP & Semantic Parsing",
     description: "Integrating tiny, local ONNX-based semantic embedding models to enhance zero-dependency intent mapping and complex parameter extraction without requiring network connectivity.",
     status: "now",
     statusLabel: "In Active Development",
     icon: Cpu,
   },
-  {
-    title: "Self-Healing Parser Upgrades",
-    description: "Upgrading the core parser registry to support dynamic tool output adapters, automatically resolving structural changes and command-line drift in upstream security tools.",
-    status: "now",
-    statusLabel: "In Active Development",
-    icon: Terminal,
-  },
+
   // --- NEXT ---
   {
-    title: "Remote Access Interfaces",
-    description: "Introducing Slack, Discord, and Telegram chatbot integrations to remotely execute scans, approve workflow steps, and receive real-time alerts via secure webhook gateways.",
+    title: "Sandbox Containment & Secure Runtimes",
+    description: "Activating sandboxing (Bubblewrap/bwrap on Linux, NTFS ACL hardening on Windows) by default. Implementing a 'fail-closed' strategy to block host execution unless explicit sandboxing is successful.",
     status: "next",
     statusLabel: "Up Next",
-    icon: Bot,
+    icon: Lock,
   },
   {
-    title: "Continuous Learning System (CLS) v2",
-    description: "Upgrading the skill library with sqlite-vss vector search, interactive reinforcement learning, and advanced generalization of variables beyond simple target placeholders.",
+    title: "Transactional Session Branching",
+    description: "Upgrading the session branching mechanism to use append-only transaction logs or SQLite backing instead of file-overwriting JSONLs, eliminating write collisions during parallel agent execution.",
     status: "next",
     statusLabel: "Up Next",
     icon: Database,
   },
   {
-    title: "Parallel Tool Execution Pool",
-    description: "Orchestrating concurrent security operations via an advanced worker pool with customized timeout gates, syntax auto-repair, and graceful interruption handling.",
+    title: "DAG-Aware Autonomous Executor",
+    description: "Refactoring the autonomous script runner to use topological sorting on command steps. Replaces naive concurrent execution with dependency-aware step orchestration to prevent step-sequence failures.",
     status: "next",
     statusLabel: "Up Next",
     icon: Workflow,
   },
   {
-    title: "Offline Vulnerability Correlator",
-    description: "Developing local heuristics to cross-reference scanning results, reduce duplicates, and automatically calculate contextual CVSS threat levels.",
+    title: "Non-Blocking Async Threat Intel",
+    description: "Refactoring the threat intelligence subsystem to use asynchronous HTTP clients and executing DNS lookups inside thread pools. Adds a local SQLite TTL cache to prevent NVD and OTX rate-limiting blocks.",
     status: "next",
     statusLabel: "Up Next",
-    icon: Shield,
+    icon: Zap,
   },
+
   // --- LATER ---
   {
-    title: "Advanced Report Generation",
-    description: "Generating highly detailed interactive HTML, PDF, and Markdown reports offline, with native formats ready for direct ingestion into SIEM platforms like Splunk or ELK.",
+    title: "Attack Path Graph Modeling",
+    description: "Extending the knowledge graph with automated lateral movement edges and subnet routing scopes. Enables bidirectional traversals to calculate blast-radius and trace security paths.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Shield,
+  },
+  {
+    title: "Multi-Agent Workspace Isolation",
+    description: "Creating virtual filesystem and context containment areas per subagent run, partitioning credentials, temporary folders, and execution logs in isolated workspaces.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Building2,
+  },
+  {
+    title: "Remote Gateway Integrations (ChatOps)",
+    description: "Introducing Slack, Discord, and Telegram chatbot integrations to remotely execute scans, approve workflow steps, and receive real-time alerts via secure webhook gateways.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Bot,
+  },
+  {
+    title: "Enterprise SIEM Exports & Reporting",
+    description: "Fixing core finding categorization within the report builder. Adding native renderers for CEF, LEEF, STIX, and Splunk HTTP Event Collector (HEC) logs to stream findings to external SIEMs.",
     status: "later",
     statusLabel: "Future Vision",
     icon: FileText,
@@ -103,13 +129,6 @@ const items: RoadmapItem[] = [
     status: "later",
     statusLabel: "Future Vision",
     icon: FlaskConical,
-  },
-  {
-    title: "Autonomic Registry Healing",
-    description: "Automatically detecting local version upgrades of system-installed security tools and auto-adjusting Siyarix parsing regex to avoid extraction failures.",
-    status: "later",
-    statusLabel: "Future Vision",
-    icon: Sparkles,
   },
 ];
 
