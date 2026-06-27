@@ -129,8 +129,13 @@ export default function AboutPage() {
           </div>
           <div className="mt-12 mx-auto max-w-lg">
             <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 text-center transition-all hover:border-white/10 hover:bg-white/[0.04]">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-siyarix-500 to-accent">
-                <span className="text-2xl font-bold text-white">M</span>
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-siyarix-500 to-accent p-[2px] shadow-[0_0_12px_rgba(99,102,241,0.15)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://avatars.githubusercontent.com/u/130831166?v=4"
+                  alt="MD Mufthakherul Islam Miraz"
+                  className="h-full w-full rounded-full object-cover bg-black"
+                />
               </div>
               <Link href="/pathmaker/" className="group/link block">
                 <h3 className="mt-4 text-lg font-semibold text-white transition-colors group-hover/link:text-siyarix-400">
