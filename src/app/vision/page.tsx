@@ -85,9 +85,7 @@ export default function VisionPage() {
               Vision & <span className="gradient-text">Goals</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              Siyarix is on a mission to transform security operations from
-              fragmented, tool-specific workflows into a unified,
-              intelligence-driven discipline.
+              Siyarix began as a personal exploration to bridge the gap between human intent and machine execution in security. Our mission is to make intelligent security orchestration accessible to everyone, helping researchers, developers, and security practitioners run automated workflows transparently, safely, and collaboratively.
             </p>
           </div>
         </div>
@@ -102,19 +100,20 @@ export default function VisionPage() {
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Our Vision
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-                We envision a world where security professionals can describe
-                their objectives in natural language and have them executed
-                across any tool, any cloud, and any environment — autonomously
-                and safely. Siyarix bridges the gap between human
-                intent and machine execution, making expert-level security
-                orchestration accessible to individual developers, researchers, 
-                and the open-source community.
-              </p>
+              <div className="mt-4 space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+                <p>
+                  Our vision is built on a simple conviction: security tooling should support practitioners, not exhaust them. We believe that advanced security orchestration shouldn&apos;t be a privilege reserved only for large enterprises, nor should it require managing dozens of disconnected commands and API integrations manually.
+                </p>
+                <p>
+                  We envision a collaborative, open-source future where anyone—from a solo security researcher to an independent developer—can describe their security objectives in clear natural language, and have them translated into precise, sandboxed multi-tool workflows.
+                </p>
+                <p>
+                  Siyarix acts as a humble coordinator, bridging the gap between what you want to achieve and how the underlying tools perform the task, ensuring that safety, privacy, and user consent remain at the core of every operation.
+                </p>
+              </div>
               <div className="mt-6 border-l-2 border-accent pl-4">
                 <p className="text-sm italic text-slate-400">
-                  &ldquo;Security operations should be defined by strategy, not
-                  by the friction of tooling.&rdquo;
+                  &ldquo;We aim to reduce the complexity of security tooling so that practitioners can focus on understanding and resolving threats, rather than struggling with configuration syntax.&rdquo;
                 </p>
               </div>
             </div>
