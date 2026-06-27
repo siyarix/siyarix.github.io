@@ -47,7 +47,7 @@ export default function EthicalUsePage() {
       {/* Full Document Link */}
       <div className="mt-12 text-center">
         <Link
-          href="https://github.com/siyarix/siyarix/blob/main/ETHICAL_USE.md"
+          href="https://github.com/mufthakherul/siyarix/blob/main/ETHICAL_USE.md"
           className="inline-flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500"
         >
           <Fingerprint className="h-4 w-4" />
