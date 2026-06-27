@@ -46,7 +46,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="https://github.com/siyarix/siyarix"
+            href="https://github.com/mufthakherul/siyarix"
             className="ml-3 rounded-lg bg-siyarix-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-siyarix-500 hover:shadow-lg hover:shadow-siyarix-600/20 active:scale-95"
           >
             GitHub
@@ -84,7 +84,7 @@ export default function Header() {
           </Link>
         ))}
         <Link
-          href="https://github.com/siyarix/siyarix"
+          href="https://github.com/mufthakherul/siyarix"
           className="mt-2 block rounded-lg bg-siyarix-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-siyarix-500"
           onClick={() => setMobileOpen(false)}
         >

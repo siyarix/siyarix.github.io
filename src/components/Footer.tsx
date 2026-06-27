@@ -18,8 +18,8 @@ const footerLinks = [
     links: [
       { href: "/contributors", label: "Contributors" },
       { href: "/contact", label: "Contact" },
-      { href: "https://github.com/siyarix/siyarix/discussions", label: "Discussions" },
-      { href: "https://github.com/siyarix/siyarix/issues", label: "Issues" },
+      { href: "https://github.com/mufthakherul/siyarix/discussions", label: "Discussions" },
+      { href: "https://github.com/mufthakherul/siyarix/issues", label: "Issues" },
     ],
   },
   {
