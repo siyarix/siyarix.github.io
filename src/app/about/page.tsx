@@ -132,7 +132,7 @@ export default function AboutPage() {
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-siyarix-500 to-accent">
                 <span className="text-2xl font-bold text-white">M</span>
               </div>
-              <Link href="/pathmaker" className="group/link block">
+              <Link href="/pathmaker/" className="group/link block">
                 <h3 className="mt-4 text-lg font-semibold text-white transition-colors group-hover/link:text-siyarix-400">
                   MD Mufthakherul Islam Miraz
                 </h3>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               <p className="mt-3 text-sm leading-relaxed text-slate-400">
                 Building Siyarix from a personal vision into a collaborative open-source platform.
                 <br />
-                <Link href="/pathmaker" className="mt-2 inline-block text-siyarix-400 hover:underline">
+                <Link href="/pathmaker/" className="mt-2 inline-block text-siyarix-400 hover:underline">
                   Read the PathMaker&apos;s story &rarr;
                 </Link>
               </p>
