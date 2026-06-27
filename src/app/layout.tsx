@@ -104,9 +104,12 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/assets/logo.png",
+    shortcut: "/assets/logo.png",
     apple: "/assets/logo.png",
+  },
+  verification: {
+    google: "your-google-verification-token",
   },
   referrer: "strict-origin-when-cross-origin",
 };
