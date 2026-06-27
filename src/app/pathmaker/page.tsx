@@ -21,6 +21,16 @@ export default function PathMakerPage() {
           </Link>
 
           <div className="mx-auto max-w-3xl text-center mt-8">
+            <div className="mb-6 flex justify-center">
+              <div className="h-28 w-28 rounded-full bg-gradient-to-br from-siyarix-500 to-accent p-[3px] shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://avatars.githubusercontent.com/u/130831166?v=4"
+                  alt="MD Mufthakherul Islam Miraz"
+                  className="h-full w-full rounded-full object-cover bg-black"
+                />
+              </div>
+            </div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-siyarix-500/20 bg-siyarix-500/10 px-4 py-1.5 text-sm text-siyarix-300">
               <Compass className="h-3.5 w-3.5" />
               The PathMaker
