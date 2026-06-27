@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { Users, Heart, Star, Globe, GitFork, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Contributors",
+  description: "Meet the open-source community contributors driving Siyarix forward. View core developers, git commits, and community profiles.",
+  openGraph: {
+    title: "Siyarix — Community Contributors",
+    description: "Meet the developers and community members contributing to Siyarix.",
+  },
+};
 
 interface GitHubContributor {
   login: string;

@@ -8,19 +8,61 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://siyarix.github.io"),
   title: {
-    default: "Siyarix — AI Cybersecurity Orchestration Platform",
+    default: "Siyarix — Open-Source AI Security Orchestrator",
     template: "%s | Siyarix",
   },
   description:
-    "Siyarix is an AI-native cybersecurity operations platform that translates natural language into deterministic security workflows. 25+ AI providers, 80+ tool parsers, 4 execution modes.",
+    "Siyarix is an open-source, AI-native security orchestration platform. Translate natural language queries into precise, multi-tool security workflows with built-in permission gates.",
+  keywords: [
+    "cybersecurity",
+    "AI security agent",
+    "security orchestration",
+    "open-source pentest tool",
+    "SOAR",
+    "security workflows",
+    "nmap parser",
+    "automated penetration testing",
+    "AI cyber agent"
+  ],
+  authors: [{ name: "Siyarix Contributors" }],
+  creator: "Siyarix Contributors",
+  publisher: "Siyarix",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Siyarix — AI Cybersecurity Orchestration Platform",
+    title: "Siyarix — Open-Source AI Security Orchestrator",
     description:
-      "CLI-native, multi-provider AI orchestration for modern security operations.",
+      "Translate natural language objectives into precise, multi-tool security workflows natively. Free, open-source, and privacy-focused.",
+    url: "https://siyarix.github.io",
     siteName: "Siyarix",
+    images: [
+      {
+        url: "/assets/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Siyarix Security Platform Logo",
+      },
+    ],
     type: "website",
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Siyarix — Open-Source AI Security Orchestrator",
+    description:
+      "Translate natural language objectives into precise, multi-tool security workflows natively.",
+    images: ["/assets/logo.png"],
   },
 };
 

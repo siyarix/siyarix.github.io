@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MessageCircle,
@@ -9,6 +10,15 @@ import {
   Heart,
   ArrowRight,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact & Community support",
+  description: "Get in touch with the Siyarix team and community. Report vulnerabilities, suggest features, discuss pentesting automation, and join our channels.",
+  openGraph: {
+    title: "Siyarix — Contact & Support",
+    description: "Get in touch with Siyarix security teams and community channels.",
+  },
+};
 
 const contactCards = [
   {
