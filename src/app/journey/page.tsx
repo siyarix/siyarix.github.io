@@ -242,7 +242,7 @@ export default function JourneyPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://github.com/siyarix/siyarix"
+                href="https://github.com/mufthakherul/siyarix"
                 className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500"
               >
                 <Users className="h-4 w-4" />
