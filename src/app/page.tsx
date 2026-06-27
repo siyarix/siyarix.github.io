@@ -75,7 +75,9 @@ export default function HomePage() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="https://github.com/siyarix/siyarix"
-                className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500 hover:shadow-siyarix-500/30"
+                className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/20 transition-all duration-300 hover:bg-siyarix-500 hover:-translate-y-0.5 active:scale-98"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitFork className="h-4 w-4" />
                 View on GitHub
@@ -83,15 +85,17 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/install"
-                className="gradient-border rounded-xl bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:bg-white/10"
+                className="gradient-border rounded-xl bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 active:scale-98"
               >
                 Install Now
               </Link>
               <Link
-                href="/about"
-                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:bg-white/10"
+                href="https://mufthakherul.github.io/siyarix/"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:border-siyarix-500/30 hover:text-siyarix-300 hover:-translate-y-0.5 active:scale-98"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Learn More
+                Check Full Documentation
               </Link>
             </div>
           </div>
@@ -171,14 +175,24 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="https://github.com/siyarix/siyarix"
-                className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all hover:bg-siyarix-500"
+                className="flex items-center gap-2 rounded-xl bg-siyarix-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-siyarix-600/25 transition-all duration-300 hover:bg-siyarix-500 hover:-translate-y-0.5 active:scale-98"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitFork className="h-4 w-4" />
                 Get Started on GitHub
               </Link>
               <Link
+                href="https://mufthakherul.github.io/siyarix/"
+                className="rounded-xl border border-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:text-siyarix-300 hover:-translate-y-0.5 active:scale-98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read Full Documentation
+              </Link>
+              <Link
                 href="/contributors"
-                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:bg-white/10"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 active:scale-98"
               >
                 Meet the Contributors
               </Link>

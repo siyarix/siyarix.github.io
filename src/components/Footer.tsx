@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Terminal } from "lucide-react";
 
 const footerLinks = [
@@ -9,6 +10,7 @@ const footerLinks = [
       { href: "/journey", label: "Journey" },
       { href: "/vision", label: "Vision & Goals" },
       { href: "/roadmap", label: "Roadmap" },
+      { href: "https://mufthakherul.github.io/siyarix/", label: "Documentation" },
     ],
   },
   {
@@ -37,9 +39,11 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-white">
-              <Terminal className="h-5 w-5 text-siyarix-400" />
-              <span>Siyarix</span>
+            <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold text-white group">
+              <div className="relative overflow-hidden rounded-lg bg-white/5 p-1 transition-all duration-300 group-hover:scale-105 group-hover:bg-white/10">
+                <Image src="/assets/logo.png" alt="Siyarix Logo" width={24} height={24} className="object-contain" />
+              </div>
+              <span className="font-bold tracking-wide transition-colors group-hover:text-siyarix-400">Siyarix</span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-slate-400">
               AI-native cybersecurity operations platform. Translate natural language into precise,
@@ -55,6 +59,8 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm text-slate-400 transition-colors hover:text-white"
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     >
                       {link.label}
                     </Link>

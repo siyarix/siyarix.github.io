@@ -49,3 +49,22 @@ body {
 .glow {
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 40px rgba(6, 182, 212, 0.1);
 }
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 4rem 4rem; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-grid {
+  animation: grid-move 30s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
