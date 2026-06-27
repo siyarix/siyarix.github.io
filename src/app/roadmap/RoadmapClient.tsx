@@ -23,6 +23,19 @@ import {
   UserCheck,
   Eye,
   ShieldAlert,
+  Unplug,
+  Bug,
+  Wifi,
+  Signal,
+  Plug,
+  Layers,
+  ListChecks,
+  Settings2,
+  Timer,
+  CloudOff,
+  HardDrive,
+  AlertTriangle,
+  Activity,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -73,6 +86,27 @@ const items: RoadmapItem[] = [
     statusLabel: "In Active Development",
     icon: Eye,
   },
+  {
+    title: "Local Provider Connectivity & Reliability",
+    description: "Improving connection handling, health checks, and error recovery for Ollama, llama.cpp, LM Studio, vLLM, and LocalAI providers. Adding post-launch verification, configurable timeouts, and graceful degradation when local services are unavailable or starting up.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Wifi,
+  },
+  {
+    title: "Provider Profile Configuration Audit",
+    description: "Correcting misconfigured provider capability flags (supports_streaming, supports_tools) across local provider profiles. Adding dynamic model discovery, fallback default models, and proper vision model detection for vLLM and LocalAI.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Settings2,
+  },
+  {
+    title: "Subprocess Safety & Credential Hardening",
+    description: "Replacing 41 direct subprocess calls with the safe subprocess_utils wrapper. Eliminating plaintext sudo password caching in module globals, hardening path traversal detection against unicode and symlink attacks, and ensuring consistent subprocess timeout propagation.",
+    status: "now",
+    statusLabel: "In Active Development",
+    icon: Shield,
+  },
 
   // --- NEXT ---
   {
@@ -117,6 +151,48 @@ const items: RoadmapItem[] = [
     statusLabel: "Up Next",
     icon: Terminal,
   },
+  {
+    title: "Credential Store Thread Safety & Encryption Audit",
+    description: "Adding thread-locks to all credential store operations to prevent dictionary corruption under concurrent access. Ensuring AES-256-GCM is consistently used for all new credentials, not only after explicit migration. Addressing Windows key file protection limitations.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Lock,
+  },
+  {
+    title: "Audit Log Deadlock Fix & Chain Integrity",
+    description: "Resolving a critical reentrant-lock deadlock in audit log cleanup by migrating to threading.RLock. Restoring full 64-character SHA-256 hash chain integrity, fixing counter race conditions outside lock scope, and adding on-disk chain verification beyond the last 1000 entries.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: ListChecks,
+  },
+  {
+    title: "Executor Race Conditions & Error Recovery",
+    description: "Fixing a data race on shared CommandResult.lines between parallel execution tasks and live display updates. Adding return_exceptions=True to all asyncio.gather calls to prevent total plan failure from a single step error. Improving error handling across autonomous and registry executors.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Bug,
+  },
+  {
+    title: "NLP Tokenization & Stopword Consolidation",
+    description: "Eliminating duplicated stopword lists and tokenization logic duplicated across nlp_engine.py and learning_system.py. Centralizing synonym dictionaries (300+ hardcoded entries) into external configuration files for easier maintenance.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Layers,
+  },
+  {
+    title: "Provider Endpoint Consolidation",
+    description: "Centralizing duplicated provider endpoint definitions currently scattered across health.py, provider_utils.py, and connectivity.py into a single source of truth. Adding dynamic provider discovery from ProviderManager to replace hardcoded provider lists.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Plug,
+  },
+  {
+    title: "Stealth Engine Proxy Rotation Fix",
+    description: "Correcting a logic bug in the stealth proxy rotation system where the proxy index increments on every call instead of only during rotation intervals, causing premature proxy exhaustion and degraded operational security.",
+    status: "next",
+    statusLabel: "Up Next",
+    icon: Activity,
+  },
 
   // --- LATER ---
   {
@@ -160,6 +236,62 @@ const items: RoadmapItem[] = [
     status: "later",
     statusLabel: "Future Vision",
     icon: FlaskConical,
+  },
+  {
+    title: "Monolithic Module Refactoring Initiative",
+    description: "Breaking down oversized files that have grown beyond maintainable size: planner_registry.py (2100+ lines), onboarding.py (2900 lines), cli/__init__.py (1800 lines), and tool_handlers.py (800 lines) into focused, single-responsibility modules with clear interfaces.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Layers,
+  },
+  {
+    title: "Parser Test Coverage Initiative",
+    description: "Adding dedicated unit tests for each of the 113 security tool parsers. Currently only 11 test files cover the entire parser ecosystem, leaving 90% of parsers untested individually. Establishing a standardized parser test harness and fixture framework.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: ListChecks,
+  },
+  {
+    title: "Mobile & Low-Power Optimization",
+    description: "Reducing PBKDF2 iterations for credential store operations on mobile and Raspberry Pi-class devices. Adding adaptive performance profiles that detect available resources and adjust caching, thread pool sizes, and background task aggressiveness accordingly.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Signal,
+  },
+  {
+    title: "Event Loop & Async Architecture Review",
+    description: "Auditing all asynchronous code for proper error handling patterns, timeout propagation, and event loop compatibility across Windows (ProactorEventLoop), Linux, and macOS. Standardizing on create_task over ensure_future and eliminating synchronous HTTP calls in async contexts.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Timer,
+  },
+  {
+    title: "Webhook & Notification Consolidation",
+    description: "Merging the separate webhooks.py and notifications.py modules into a unified dispatch system with automatic retry logic, rate limiting, and support for multiple output formats (Slack, Discord, generic webhook, email). Replacing synchronous urllib calls with async httpx throughout.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: CloudOff,
+  },
+  {
+    title: "CI/CD Pipeline Consolidation",
+    description: "Deduplicating overlapping workflow definitions (stale, changelog, codeql, security workflows) and aligning coverage thresholds across pyproject.toml (70%), Makefile (50%), and CI configuration (40%) to a consistent, enforced standard.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: HardDrive,
+  },
+  {
+    title: "Memory System Reentrancy & Persistence Fixes",
+    description: "Replacing non-reentrant threading.Lock with RLock across MemoryStore to prevent deadlocks in nested operations. Adding proper database connection lifecycle management and ensuring persistence failures are surfaced to the caller rather than silently skipped.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Database,
+  },
+  {
+    title: "Unified Timeout & Configuration Framework",
+    description: "Consolidating all hardcoded timeouts (currently ranging from 0.5s to 600s across 20+ modules) into a single configuration layer. Making executor limits, cache TTLs, guardrail thresholds, stealth intervals, and health check timeouts centrally configurable via environment variables and config files.",
+    status: "later",
+    statusLabel: "Future Vision",
+    icon: Settings2,
   },
 ];
 
