@@ -39,7 +39,7 @@ export default function PathMakerPage() {
               MD Mufthakherul Islam <span className="gradient-text">Miraz</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              I don&apos;t just write code; I forge paths. Siyarix started as a personal journey to simplify cybersecurity, and as the PathMaker, I&apos;m dedicated to shaping its open-source future alongside the community.
+              Siyarix started as a personal journey to explore AI-native security automation. As the PathMaker, my focus is on helping clear the initial path, establish the core foundations, and build a collaborative space where developers and security researchers can explore together.
             </p>
           </div>
         </div>
@@ -54,13 +54,13 @@ export default function PathMakerPage() {
               </h2>
               <div className="mt-6 space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  In traditional software development, titles like &quot;Founder&quot; or &quot;Lead Developer&quot; imply a rigid hierarchy. But open source is an expedition. It requires someone to break the initial trail, clear the obstacles, and draw the map for others to follow.
+                  Open-source projects thrive on collaboration rather than rigid hierarchies. Siyarix was initially created to solve my own day-to-day challenges in cybersecurity. The title &quot;PathMaker&quot; simply represents the role of setting up the first milestone, clearing initial design blockers, and organizing a clear architecture for others to build upon.
                 </p>
                 <p>
-                  As the PathMaker, my role isn&apos;t just about leading from the top down. It&apos;s about ensuring the underlying architecture is robust enough for contributors to explore safely, innovating new ways to orchestrate AI with security tooling, and ensuring the project remains accessible to everyone.
+                  Rather than directing from the top down, the PathMaker&apos;s focus is to support the community: keeping the core engines secure, adding the first set of tool parsers, and ensuring that the project remains open, accessible, and safe for everyone to build upon.
                 </p>
                 <p>
-                  Siyarix is growing fast, but at its heart, it remains a passionate endeavor to push the boundaries of what is possible in cybersecurity orchestration.
+                  Siyarix is a small, growing project. At its heart, it is a collective effort to explore what is possible when modern AI is paired with classic security tooling. I am incredibly grateful to everyone who is joining this journey.
                 </p>
               </div>
             </div>
@@ -68,17 +68,17 @@ export default function PathMakerPage() {
               <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 glow">
                 <Code2 className="h-6 w-6 text-siyarix-400 mb-4" />
                 <h3 className="font-semibold text-white">Architect</h3>
-                <p className="mt-2 text-sm text-slate-400">Designing the core foundations, from the 110+ tool parsers to the zero-trust execution modes.</p>
+                <p className="mt-2 text-sm text-slate-400">Co-designing the open foundations alongside contributors, ensuring modularity in parsers and sandboxed executions.</p>
               </div>
               <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 glow">
                 <Sparkles className="h-6 w-6 text-siyarix-400 mb-4" />
                 <h3 className="font-semibold text-white">Visionary</h3>
-                <p className="mt-2 text-sm text-slate-400">Charting the course for AI-native orchestration in an open, community-driven ecosystem.</p>
+                <p className="mt-2 text-sm text-slate-400">Helping shape the collaborative roadmap for Siyarix, aligning AI orchestration goals with real-world security needs.</p>
               </div>
               <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 glow sm:col-span-2">
                 <Terminal className="h-6 w-6 text-siyarix-400 mb-4" />
                 <h3 className="font-semibold text-white">Developer</h3>
-                <p className="mt-2 text-sm text-slate-400">Actively building, testing, and refining the Siyarix CLI and integration plugins every day.</p>
+                <p className="mt-2 text-sm text-slate-400">Writing code, refactoring tests, and addressing bugs to keep the platform reliable for users and developers alike.</p>
               </div>
             </div>
           </div>
