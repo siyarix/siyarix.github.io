@@ -1,0 +1,17 @@
+{
+  "name": "Siyarix Security Platform",
+  "short_name": "Siyarix",
+  "description": "AI-native open-source security orchestration platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

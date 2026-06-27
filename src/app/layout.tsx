@@ -102,6 +102,12 @@ export const metadata: Metadata = {
       "Translate natural language objectives into precise, multi-tool security workflows natively.",
     images: ["/assets/logo.png"],
   },
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/assets/logo.png",
+  },
 };
 
 export default function RootLayout({

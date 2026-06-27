@@ -200,6 +200,32 @@ $ siyarix --mode offline run "scan target"  # Offline mode`}</code>
           </div>
         </div>
       </section>
+
+      {/* JSON-LD Schema Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Siyarix",
+            "operatingSystem": "Linux, Windows, macOS, Android, iOS",
+            "applicationCategory": "SecurityApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            },
+            "description": "An open-source AI security orchestration agent that translates natural language objectives into multi-tool workflows.",
+            "releaseNotes": "https://mufthakherul.github.io/siyarix/changelog/",
+            "softwareVersion": "1.0.0",
+            "author": {
+              "@type": "Person",
+              "name": "MD MUFTHAKHERUL ISLAM MIRAZ"
+            }
+          })
+        }}
+      />
     </>
   );
 }
