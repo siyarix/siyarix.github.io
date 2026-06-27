@@ -9,7 +9,7 @@ const pillars = [
   {
     icon: Target,
     title: "Universal Security Automation",
-    progress: 90,
+    progress: 65,
     description:
       "Make every security tool accessible through simple, natural language intents.",
     status:
@@ -19,7 +19,7 @@ const pillars = [
   {
     icon: Lock,
     title: "Air-Gapped & Offline Autonomy",
-    progress: 85,
+    progress: 60,
     description:
       "Ensure the orchestrator runs safely in offline environments without external LLM API dependencies.",
     status:
@@ -29,7 +29,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Zero-Trust AI Architecture",
-    progress: 80,
+    progress: 50,
     description:
       "Build execution systems that are safe, sandboxed, and privacy-respecting by default.",
     status:
@@ -39,7 +39,7 @@ const pillars = [
   {
     icon: Sparkles,
     title: "Continuous Learning & Intent Mapping",
-    progress: 75,
+    progress: 45,
     description:
       "Enable the orchestrator to dynamically memorize successful workflows and build custom execution skills.",
     status:
@@ -49,7 +49,7 @@ const pillars = [
   {
     icon: Heart,
     title: "Community-Driven Development",
-    progress: 70,
+    progress: 40,
     description:
       "Foster an open, collaborative ecosystem of security plugins, parsers, and custom model templates.",
     status:
@@ -59,7 +59,7 @@ const pillars = [
   {
     icon: Globe,
     title: "Cross-Platform Portability",
-    progress: 85,
+    progress: 55,
     description:
       "Run reliably across Linux, macOS, and Windows environments.",
     status:
